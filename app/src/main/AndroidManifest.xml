@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".Scientific"
+            android:name=".TextPage"
             android:label="Scientific Calculator"/>
     </application>
 

@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by èº on 2015/6/13 0013.
+ * Created by ï¿½ on 2015/6/13 0013.
  */
-public class Scientific extends Activity {
+public class TextPage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scientific);
+        setContentView(R.layout.text);
     }
 }

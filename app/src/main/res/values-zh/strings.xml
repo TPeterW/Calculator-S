@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">简洁计算器</string>
-    <string name="clear">清除</string>
+    <string name="app_name">密信计算器</string>
+    <string name="clear">C</string>
     <string name="action_settings">设置</string>
+    <string name="invalid_input">非法输入</string>
 </resources>

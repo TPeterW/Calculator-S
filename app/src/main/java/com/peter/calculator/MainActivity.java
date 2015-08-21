@@ -2,16 +2,11 @@ package com.peter.calculator;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
@@ -132,7 +127,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         button_clear.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Scientific.class);
+                Intent intent = new Intent(MainActivity.this, TextPage.class);
                 startActivity(intent);
                 return true;
             }
