@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">简洁计算器</string>
+    <string name="clear">清除</string>
+    <string name="action_settings">设置</string>
+</resources>

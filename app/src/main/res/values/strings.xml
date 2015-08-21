@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Simple Calculator</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="invalid_input">Invalid Input</string>
+
+
+    <string name="one" translatable="false">1</string>
+    <string name="two" translatable="false">2</string>
+    <string name="three" translatable="false">3</string>
+    <string name="four" translatable="false">4</string>
+    <string name="five" translatable="false">5</string>
+    <string name="six" translatable="false">6</string>
+    <string name="seven" translatable="false">7</string>
+    <string name="eight" translatable="false">8</string>
+    <string name="nine" translatable="false">9</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="dot" translatable="false">.</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="minus" translatable="false">-</string>
+    <string name="multi" translatable="false">×</string>
+    <string name="div" translatable="false">÷</string>
+    <string name="equals" translatable="false">=</string>
+    <string name="del" translatable="false">DEL</string>
+    <string name="clear">C</string>
+</resources>
