@@ -17,6 +17,6 @@
         android:textSize="10dp"
         android:gravity="right"
         android:layout_marginTop="5dp"
-        android:text="Pictures from: http://www.1001FreeDownloads.com"/>
+        android:text="Icons from: http://www.1001FreeDownloads.com"/>
 
 </LinearLayout>

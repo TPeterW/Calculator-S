@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Calculator-S</string>
 
-    <string name="action_settings">Settings</string>
-
     <string name="invalid_input">Invalid Input</string>
 
     <!--Number Pad-->
@@ -41,4 +39,11 @@
 
     <!--Toast-->
     <string name="wontHaveAccess">You won\'t be able to use the hidden functions now</string>
+
+    <!--Hidden Page Action Buttons-->
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
+
+    <!--SearchView-->
+    <string name="inputKeyWord">Input Key Word To Search</string>
 </resources>

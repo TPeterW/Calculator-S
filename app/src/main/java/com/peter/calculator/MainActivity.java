@@ -54,9 +54,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
         init();
 
-        if(!readfile()){
-            setPassword();
-        }
+        // TODO: turn on later
+//        if(!readfile()){
+//            setPassword();
+//        }
     }
 
     private void setPassword() {
@@ -214,9 +215,12 @@ public class MainActivity extends Activity implements View.OnClickListener{
         button_clear.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                Button temp = (Button)findViewById(v.getId());
                 if (display.getText().equals(password)) {
                     Intent intent = new Intent(MainActivity.this, HiddenPage.class);
                     startActivity(intent);
+                    String returnValue = calc.click(temp.getText().toString(), v);
+                    display.setText(returnValue);
                 } else {
                     // TODO: Empty everything
                 }

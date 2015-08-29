@@ -21,7 +21,15 @@
 
         <activity
             android:name=".HiddenPage"
-            android:label="Scientific Calculator"/>
+            android:label="Hidden Page"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity
+            android:name=".Settings"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:parentActivityName=".HiddenPage"/>
+
     </application>
 
 </manifest>
