@@ -4,4 +4,15 @@
     <string name="clear">C</string>
     <string name="action_settings">设置</string>
     <string name="invalid_input">非法输入</string>
+    <string name="text">短信</string>
+    <string name="photo">照片</string>
+    <string name="note">笔记</string>
+    <string name="diary">日记</string>
+    <string name="haventSetPIN">您还未设置PIN码</string>
+    <string name="setPin">设置PIN码</string>
+    <string name="okayButton">确定</string>
+    <string name="notNowButton">稍后</string>
+    <string name="wontHaveAccess">您将暂时不能使用隐藏功能</string>
+    <string name="inputPIN">请输入4位PIN码</string>
+    <string name="wrongFormat">请输入4位数字PIN码</string>
 </resources>

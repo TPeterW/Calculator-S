@@ -1,13 +1,20 @@
 package com.peter.calculator;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements View.OnClickListener{
@@ -32,12 +39,91 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private Calculator calc;
     private TextView display;
 
+    private AlertDialog setPin;
+    private static String password;
+    private EditText pinInput;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // temporary
+        password = "5221";
+
+        init();
+
+        if(!readfile()){
+            setPassword();
+        }
+    }
+
+    private void setPassword() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflator = this.getLayoutInflater();
+
+        final View view = inflator.inflate(R.layout.set_pin_dialog, null);
+
+        builder.setTitle(R.string.setPin)
+                .setView(view)
+                .setPositiveButton(R.string.okayButton, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // overriden
+                    }
+                })
+                .setNegativeButton(R.string.notNowButton, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, R.string.wontHaveAccess, Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                });
+
+        setPin = builder.create();
+
+        setPin.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Button okay = setPin.getButton(AlertDialog.BUTTON_POSITIVE);
+                okay.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        pinInput = (EditText) view.findViewById(R.id.pinInput);
+                        String pin = pinInput.getText().toString();
+                        if (pin.length() != 4 || !checkNumeric(pin)) {
+                            pinInput.setText("");
+                            Toast.makeText(MainActivity.this, R.string.wrongFormat, Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            password = pin;
+                            setPin.dismiss();
+                        }
+                    }
+
+                    private boolean checkNumeric(String pin) {
+                        String full = "0123456789";
+                        for (int i = 0; i < pin.length(); i++) {
+                            if (!full.contains(pin.charAt(i) + "")) {
+                                return false;
+                            }
+                        }
+
+                        return true;
+                    }
+                });
+            }
+        });
+
+        setPin.show();
+    }
+
+    private boolean readfile() {
+        return false;
+    }
+
+    private void init() {
         button_0 = (Button)findViewById(R.id.button_0);
         button_1 = (Button)findViewById(R.id.button_1);
         button_2 = (Button)findViewById(R.id.button_2);
@@ -121,19 +207,24 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 }
             }
         });
+
         button_clear.setOnClickListener(this);
 
 
         button_clear.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TextPage.class);
-                startActivity(intent);
+                if (display.getText().equals(password)) {
+                    Intent intent = new Intent(MainActivity.this, HiddenPage.class);
+                    startActivity(intent);
+                } else {
+                    // TODO: Empty everything
+                }
                 return true;
             }
         });
-
     }
+
 
     @Override
     public void onClick(View v){
@@ -144,10 +235,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
         display.setText(returnValue);
 
         checkSize();
-        if(returnValue.equals("multi"))
+        if(returnValue.equals("multi") || returnValue.equals("multi."))
             display.setText(R.string.multi);
-        if(returnValue.equals("div"))
-            display.setText(R.string.div);
+        if(returnValue.equals("div") || returnValue.equals(("div.")))
+            display.setText(R.string.div);;
     }
 
 

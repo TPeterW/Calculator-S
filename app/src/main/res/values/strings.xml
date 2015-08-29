@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Calculator.T</string>
+    <string name="app_name">Calculator-S</string>
 
     <string name="action_settings">Settings</string>
 
     <string name="invalid_input">Invalid Input</string>
 
-
+    <!--Number Pad-->
     <string name="one" translatable="false">1</string>
     <string name="two" translatable="false">2</string>
     <string name="three" translatable="false">3</string>
@@ -24,4 +24,21 @@
     <string name="equals" translatable="false">=</string>
     <string name="del" translatable="false">DEL</string>
     <string name="clear">C</string>
+
+    <!--Category Names-->
+    <string name="text">Texts</string>
+    <string name="photo">Photos</string>
+    <string name="note">Notes</string>
+    <string name="diary">Diary</string>
+
+    <!--Set Pin Dialog-->
+    <string name="haventSetPIN">You haven\'t set your PIN yet</string>
+    <string name="setPin">Set PIN</string>
+    <string name="okayButton">OK</string>
+    <string name="notNowButton">Not Now</string>
+    <string name="inputPIN">Enter your 4 digit PIN</string>
+    <string name="wrongFormat">Enter only 4 digit numeric PIN</string>
+
+    <!--Toast-->
+    <string name="wontHaveAccess">You won\'t be able to use the hidden functions now</string>
 </resources>

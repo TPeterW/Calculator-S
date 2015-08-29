@@ -7,7 +7,7 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 /**
- * Created by � on 2015/6/13 0013.
+ * Created by � on 2015/6/13 0013.
  */
 public class Calculator {
     // TODO: create a small TextView to show instand results
@@ -244,17 +244,18 @@ public class Calculator {
     }
 
     private String addDot(View v){
-        if(currentNum.contains("."))
+        if(currentNum.contains(".") || currentNum.equals("+") || currentNum.equals("-"))
             return currentNum;
         else if(overwrite){
             currentNum = "0.";
+            overwrite = false;
             return currentNum;
         }
         else if(currentNum.length() >= 34){
             Toast.makeText(v.getContext(), "Too Long", Toast.LENGTH_SHORT).show();
             return currentNum;
         }
-        if(currentNum.charAt(currentNum.length() - 1) == '.'){
+        if(currentNum.charAt(currentNum.length() - 1) == '.' || currentNum.charAt(currentNum.length() - 1) == '×' || currentNum.charAt(currentNum.length() - 1) == '÷'){
             return currentNum;
         }
         else{
