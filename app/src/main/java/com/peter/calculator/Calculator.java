@@ -190,7 +190,11 @@ public class Calculator {
     }
 
     private String equals(){
-        if(!doCalc && currentNum == 0 + ""){
+        if(!doCalc && currentNum.equals(0 + "")){
+            return currentNum;
+        }
+
+        if(!doCalc && currentNum.equals("0.")){
             return currentNum;
         }
 
