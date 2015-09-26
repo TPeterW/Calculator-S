@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="visual"
+        android:title="@string/visual_group_title">
+
+        <SwitchPreference
+            android:key="night_mode"
+            android:title="@string/night_mode_text"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="profile"
+        android:title="@string/profile_group_title">
+
+        <EditTextPreference
+            android:key="change_passwd"
+            android:title="@string/reset_passwd"/>
+
+        <CheckBoxPreference
+            android:key="encrypt_passwd"
+            android:title="@string/encrypt_passwd"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

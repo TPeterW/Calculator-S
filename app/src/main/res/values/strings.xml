@@ -46,4 +46,11 @@
 
     <!--SearchView-->
     <string name="inputKeyWord">Input Key Word To Search</string>
+
+    <!--Settings Page-->
+    <string name="visual_group_title">Visual</string>
+    <string name="profile_group_title">Profile</string>
+    <string name="reset_passwd">Reset PIN</string>
+    <string name="night_mode_text">Night Mode</string>
+    <string name="encrypt_passwd">Encrypt PIN</string>
 </resources>

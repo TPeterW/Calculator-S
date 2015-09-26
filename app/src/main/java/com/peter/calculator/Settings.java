@@ -2,10 +2,14 @@ package com.peter.calculator;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.preference.PreferenceFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
+import android.widget.TextView;
 
 /**
  * Created by 韬 on 2015/8/29 0029.
@@ -14,11 +18,21 @@ public class Settings extends ActionBarActivity{
     private Menu menu;
     private ActionBar actionBar;
 
+    private RelativeLayout nightModePanel;
+    private TextView nightModeText;
+    private Switch nightModeSwitch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new SettingsFragment())
+                .commit();
+
         setTitle(R.string.action_settings);
 
-        super.onCreate(savedInstanceState);
+
     }
 
     private void init(){
@@ -33,5 +47,13 @@ public class Settings extends ActionBarActivity{
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    public static class SettingsFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.preferences);
+        }
     }
 }

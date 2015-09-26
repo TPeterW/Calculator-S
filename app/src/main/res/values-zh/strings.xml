@@ -17,4 +17,8 @@
     <string name="wrongFormat">请输入4位数字PIN码</string>
     <string name="action_search">搜索</string>
     <string name="inputKeyWord">输入关键字进行搜索</string>
+    <string name="night_mode_text">夜间模式</string>
+    <string name="reset_passwd">重设密码</string>
+    <string name="visual_group_title">视觉</string>
+    <string name="profile_group_title">账户</string>
 </resources>
