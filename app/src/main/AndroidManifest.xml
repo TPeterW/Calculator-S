@@ -9,11 +9,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="@string/app_name">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,12 +26,14 @@
             android:name=".HiddenPage"
             android:label="Hidden Page"
             android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".Settings"
             android:theme="@style/Theme.AppCompat.Light"
-            android:parentActivityName=".HiddenPage"/>
+            android:parentActivityName=".HiddenPage"
+            android:screenOrientation="portrait"/>
 
     </application>
 
